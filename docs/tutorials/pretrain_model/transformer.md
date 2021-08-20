@@ -105,7 +105,7 @@ $$X_{hidden}=LayerNorm(X_{hidden})$$
 <center><br>Query Key Value</br></center>
 <br></br>
 
-3、接下来，把点乘的结果除以一个常数，这里我们除以8，这个值一般是采用上文提到的矩阵的第一个维度的开方即64的开方8，当然也可以选择其他的值，然后把得到的结果做一个softmax的计算。得到的结果即是每个词对于当前位置的词的相关性大小，当然，当前位置的词相关性肯定会会很大
+3、接下来，把点乘的结果除以一个常数，这里我们除以8，这个值一般是采用上文提到的矩阵的第一个维度的开方即64的开方8，当然也可以选择其他的值，然后把得到的结果做一个softmax的计算。得到的结果即是每个词对于当前位置的词的相关性大小，当然，当前位置的词相关性肯定会很大
 
 <center><img src="https://ai-studio-static-online.cdn.bcebos.com/ed1176ae195145fa8abf6635d4d6aaeb938d2d803b6d458b9cc41a9ea7e1914f"  width="600px" /></center> 
 <center><br>softmax </br></center>
@@ -187,6 +187,7 @@ $$X_{hidden}=X_{feed_forward}+X_{hidden}$$
 ### 3.2.6 Layer Normalization
 
 Layer Normalization 的作用是把神经网络中隐藏层归一为标准正态分布，也就是独立同分布，以起到加快训练速度，加速收敛的作用
+
 $$X_{hidden}=LayerNorm(X_{hidden})$$
 
 其中：$X_{hidden} \in R^{batch_size*seq_len*embed_dim}$
